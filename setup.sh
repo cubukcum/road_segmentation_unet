@@ -10,11 +10,11 @@ fi
 python3 -m pip install pip --upgrade
 python3 -m pip install -r requirements.txt
 
-modelUrl = "https://drive.google.com/file/d/11yaV9vo7FeI5svtL_mcV0F_I8L39FZf9/view?usp=drive_link"
+FILE_ID="11yaV9vo7FeI5svtL_mcV0F_I8L39FZf9"
 
 # Download TF Lite model
 FILE=${DATA_DIR}/model.tflite
 if [ ! -f "$FILE" ]; then
   curl \
-    -L "$modelUrl" -o ${FILE}
+    -L "https://drive.google.com/uc?id=${FILE_ID}" -o ${FILE}
 fi
