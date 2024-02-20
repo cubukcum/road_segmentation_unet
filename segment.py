@@ -212,7 +212,7 @@ def main():
       '--model',
       help='Name of image segmentation model.',
       required=False,
-      default='deeplabv3.tflite')
+      default='model.tflite')
   parser.add_argument(
       '--displayMode',
       help='Mode to display image segmentation.',
@@ -230,7 +230,7 @@ def main():
       required=False,
       default=False)
   parser.add_argument(
-      '--cameraId', help='Id of camera.', required=False, default=0)
+      '--cameraId', help='Id of camera.', required=False, default=0) #check with v4l2-ctl --list-devices
   parser.add_argument(
       '--frameWidth',
       help='Width of frame to capture from camera.',
