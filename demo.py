@@ -13,8 +13,8 @@ output_details = interpreter.get_output_details()
 
 # Set up the USB camera
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 256)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 256)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 64)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 64)
 cap.set(cv2.CAP_PROP_FPS, 30)
 
 pos = (20, 60)
@@ -31,7 +31,7 @@ while True:
     ret, frame = cap.read()
 
     # Preprocess the input image
-    input_data = cv2.resize(frame, (256, 256))
+    input_data = cv2.resize(frame, (64, 64))
     input_data = np.expand_dims(input_data, axis=0)
     input_data = input_data.astype(np.float32)
     # Set the input tensor data.
@@ -42,16 +42,6 @@ while True:
 
     # Get the output tensor.
     output_data = interpreter.get_tensor(output_details[0]["index"])
-
-    # Process the output data as needed for your application.
-
-    # Example: Print the predicted output for the first sample
-    # print("Predicted Output for the first sample:")
-    # print(output_data[0])
-
-    # You can further process the output data based on your application requirements.
-
-    # Display the resulting frame
 
     cv2.imshow("frame", output_data[0])
 
