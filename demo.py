@@ -14,8 +14,8 @@ output_details = interpreter.get_output_details()
 
 # Set up the USB camera
 cap = cv2.VideoCapture(0)  # Change the camera index as needed
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 256)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 256)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 cap.set(cv2.CAP_PROP_FPS,30)
 
 pos=(20,60)
@@ -26,7 +26,7 @@ myColor=(255,0,0)
 
 fps=0
 
-
+tStart = time.time()
 while True:
     # Capture frame-by-frame
     ret, frame = cap.read()
@@ -63,6 +63,7 @@ while True:
         output_colored[output_channels == class_idx] = color
 
     # Display the resulting frame
+    cv2.putText(output_colored, f'FPS: {fps}', pos, font, height, myColor, weight)
     cv2.imshow('Combined Output', output_colored)
     #ed for your application.
 
@@ -79,7 +80,11 @@ while True:
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
+    tEnd = time.time()
+    fps=1/(tEnd-tStart)
+    fps=round(fps,2)
+    #print(fps) 
+    tStart = time.time()
 # When everything done, release the capture
 cap.release()
 cv2.destroyAllWindows()
