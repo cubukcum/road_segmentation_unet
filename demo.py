@@ -13,7 +13,7 @@ input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
 # Set up the USB camera
-cap = cv2.VideoCapture(0)  # Change the camera index as needed
+cap = cv2.VideoCapture(0)  # Change the camera index as needed, use v4l2-ctl --list-devices to list all the available camera devices
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 cap.set(cv2.CAP_PROP_FPS,30)
@@ -25,7 +25,6 @@ weight=3
 myColor=(255,0,0)
 
 fps=0
-
 tStart = time.time()
 while True:
     # Capture frame-by-frame
@@ -44,11 +43,11 @@ while True:
     # Get the output tensor.
     output_data = interpreter.get_tensor(output_details[0]['index'])
     #print(output_data[0].shape)
-    #print("burdan once")
-    # Process the output data as need# Assuming output_data[0] has shape (256, 256, 5)
+
+    # Process the output data as need, in this case output_data[0] has shape (256, 256, 5)
     output_channels = np.argmax(output_data[0], axis=-1)
 
-    # Create a color mapping for each class
+    # Color mapping for each class
     color_mapping = {
     0: [64, 42, 42],    # Road
     1: [255, 0, 0],     # Lane
@@ -65,17 +64,6 @@ while True:
     # Display the resulting frame
     cv2.putText(output_colored, f'FPS: {fps}', pos, font, height, myColor, weight)
     cv2.imshow('Combined Output', output_colored)
-    #ed for your application.
-
-    # Example: Print the predicted output for the first sample
-    #print("Predicted Output for the first sample:")
-    #print(output_data[0])
-
-    # You can further process the output data based on your application requirements.
-
-    # Display the resulting frame
-    
-    #cv2.imshow('frame', output_data[0])
 
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
