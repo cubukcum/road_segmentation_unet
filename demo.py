@@ -16,9 +16,9 @@ output_details = interpreter.get_output_details()
 cap = cv2.VideoCapture(
     0
 )  # Change the camera index as needed, use v4l2-ctl --list-devices to list all the available camera devices
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-cap.set(cv2.CAP_PROP_FPS, 30)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 480)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+cap.set(cv2.CAP_PROP_FPS, 15)
 
 pos = (20, 60)
 font = cv2.FONT_HERSHEY_SIMPLEX
