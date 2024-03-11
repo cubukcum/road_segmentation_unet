@@ -16,9 +16,9 @@ output_details = interpreter.get_output_details()
 cap = cv2.VideoCapture(
     0
 )  # Change the camera index as needed, use v4l2-ctl --list-devices to list all the available camera devices
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 480)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 720)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-cap.set(cv2.CAP_PROP_FPS, 15)
+cap.set(cv2.CAP_PROP_FPS, 30)
 
 pos = (20, 60)
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -74,6 +74,6 @@ while True:
     fps = round(fps, 2)
     # print(fps)
     tStart = time.time()
-# When everything done, release the capture
+
 cap.release()
 cv2.destroyAllWindows()

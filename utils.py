@@ -1,7 +1,6 @@
 """Util functions to visualize image segmentation model output."""
 
 from typing import List
-
 import numpy as np
 from tflite_support.task import processor
 
