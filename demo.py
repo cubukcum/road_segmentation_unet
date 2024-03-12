@@ -74,6 +74,6 @@ while True:
     fps = round(fps, 2)
     # print(fps)
     tStart = time.time()
-# When everything done, release the capture
+
 cap.release()
 cv2.destroyAllWindows()
