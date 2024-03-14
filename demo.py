@@ -33,7 +33,7 @@ while True:
     ret, frame = cap.read()
 
     # Preprocess the input image
-    input_data = cv2.resize(frame, (64, 64))
+    input_data = cv2.resize(frame, (256, 256))
     input_data = np.expand_dims(input_data, axis=0)
     input_data = input_data.astype(np.float32)
     # Set the input tensor data.
@@ -59,7 +59,7 @@ while True:
     }
 
     # Map the output channels to colors
-    output_colored = np.zeros((64, 64, 3), dtype=np.uint8)
+    output_colored = np.zeros((256, 256, 3), dtype=np.uint8)
     for class_idx, color in color_mapping.items():
         output_colored[output_channels == class_idx] = color
 
