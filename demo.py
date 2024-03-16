@@ -22,9 +22,9 @@ cap.set(cv2.CAP_PROP_FPS, 30)
 
 pos = (20, 60)
 font = cv2.FONT_HERSHEY_SIMPLEX
-height = 1.5
+height = 3
 weight = 3
-myColor = (255, 0, 0)
+myColor = (0, 0, 255)
 
 fps = 0
 tStart = time.time()
