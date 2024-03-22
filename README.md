@@ -6,4 +6,4 @@ Segmentation Models library was used with Resnet50 backbone and U-Net to achieve
 
 ## Usage
 
-Install necessary packages with pip install -r requirements.txt
+Install necessary packages with sh setup.sh
