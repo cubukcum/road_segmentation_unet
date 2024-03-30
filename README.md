@@ -7,3 +7,4 @@ Segmentation Models library was used with Resnet50 backbone and U-Net to achieve
 ## Usage
 
 Install necessary packages with sh setup.sh
+You may need to change the code depending on your input choice.
