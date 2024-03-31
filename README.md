@@ -7,4 +7,4 @@ Segmentation Models library was used with Resnet50 backbone and U-Net to achieve
 ## Usage
 
 Install necessary packages with sh setup.sh
-You may need to change the code depending on your input choice.
+You may need to change the code depending on your input choice of camera. Also feel free to adjust display_mode, num_threads, enable_edgetpu, camera_id, width, height parameters to find what fits well for you.
