@@ -6,10 +6,11 @@ This repository contains code for training and evaluating a UNet-based segmentat
 
 Segmentation Models library was used with Resnet50 backbone and U-Net to achieve better performance. Model was trained for 40 epochs and then converted to tflite model to use on Raspberry Pi.
 
+## Training Process
+
+The model was trained using a dataset consisting of annotated road images. Training was conducted for 40 epochs to ensure convergence and achieve optimal performance. During training, the model learns to accurately classify pixels into the predefined classes, enabling it to effectively segment road scenes under various conditions, including different lighting, weather, and road surface types.
+
 ## Usage
 
 Install necessary packages with sh setup.sh
 You may need to change the code depending on your input choice of camera. Also feel free to adjust display_mode, num_threads, enable_edgetpu, camera_id, width, height parameters to find what fits well for you.
-
-
-will update soon...
