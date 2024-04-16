@@ -14,3 +14,7 @@ The model was trained using a dataset consisting of annotated road images. Train
 
 Install necessary packages with sh setup.sh
 You may need to change the code depending on your input choice of camera. Also feel free to adjust display_mode, num_threads, enable_edgetpu, camera_id, width, height parameters to find what fits well for you.
+
+## Model Deployment
+
+Upon training completion, the model was converted to a TensorFlow Lite format for efficient deployment on resource-constrained platforms such as the Raspberry Pi. This lightweight model enables real-time segmentation inference, making it suitable for embedded applications in autonomous vehicles or edge computing scenarios.
